@@ -1,0 +1,134 @@
+export LANG=en_US
+
+export PS1='[`pwd`]$ '
+export GCC_HOME=/opt/gcc-5_4_0
+export GDB_HOME=/opt/gdb7
+
+export HOME=/ztesoft/pcrf90epg/pcrf_cloud
+export PROJECT_DIR=$HOME
+export IMPSYSDIR=$HOME/impsys
+
+## Oracle
+export ORACLE_HOME=/oracle11/product/112
+export PATH=$ORACLE_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
+
+## QMDB 90
+export QMDB90_HOME=$HOME/qmdb
+#export QuickMDB_NOSQL_HOME=$QMDB90_HOME
+export QuickMDB_INTERFACE=$QMDB90_HOME
+export QuickMDB_HOME=$QuickMDB_INTERFACE
+
+## TOOLS
+export TOOLS_SOURCE=$HOME/PCRFService/docker/tools/src
+export TOOLS_INSTALL=$HOME/tools/install
+export TOOLS_BUILD=$HOME/tools/build
+export TOOLS_RUNTIME=$HOME/tools/runtime
+
+## GCC & GDB
+export PATH=$GCC_HOME/bin:$GDB_HOME/bin:.:$PATH
+export LD_LIBRARY_PATH=$GCC_HOME/lib:$GCC_HOME/lib64:$GDB_HOME/lib:.:$LD_LIBRARY_PATH
+
+## MYSQL
+export MYSQL_HOME=$TOOLS_RUNTIME/mysql-5.6.33-linux-glibc2.5-x86_64
+export LD_LIBRARY_PATH=$MYSQL_HOME/lib:$LD_LIBRARY_PATH
+
+## CMAKE
+export CMAKE_HOME=$HOME/tools/runtime/cmake
+export PATH=$CMAKE_HOME/bin:$PATH
+
+## OPENSSL
+export OPENSSL_HOME=$HOME/tools/runtime/openssl
+export PATH=$OPENSSL_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$OPENSSL_HOME/lib:$LD_LIBRARY_PATH
+
+## NGHTTP2
+export NGHTTP2_HOME=$HOME/tools/runtime/nghttp2
+export NGHTTP2_PREFIX=$NGHTTP2_HOME
+export LD_LIBRARY_PATH=$NGHTTP2_HOME/lib64:$LD_LIBRARY_PATH
+
+## LIBSSH2
+export SSH2_HOME=$HOME/tools/runtime/libssh2
+export LD_LIBRARY_PATH=$SSH2_HOME/lib:$LD_LIBRARY_PATH
+
+## ZLIB
+export ZLIB_HOME=$HOME/tools/runtime/zlib
+export LD_LIBRARY_PATH=$ZLIB_HOME/lib:$LD_LIBRARY_PATH
+
+
+## PROTOBUF
+export PROTOBUF_HOME=$HOME/tools/runtime/protobuf
+export PATH=$PROTOBUF_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$PROTOBUF_HOME/lib:$LD_LIBRARY_PATH
+
+## RESTBED
+export RESTBED_HOME=$HOME/tools/runtime/restbed_master
+export LD_LIBRARY_PATH=$RESTBED_HOME/lib:$LD_LIBRARY_PATH
+
+## RESTLESS
+export RESTLESS_HOME=$HOME/tools/runtime/restless_curl
+export LD_LIBRARY_PATH=$RESTLESS_HOME/lib:$LD_LIBRARY_PATH
+
+## SWIG
+export SWIG_HOME=$HOME/tools/runtime/swig
+export PATH=$SWIG_HOME/bin:$PATH
+
+## ZOOKEEPER
+export ZOOKEEPER_HOME=$HOME/tools/runtime/zookeeper_c
+export PATH=$ZOOKEEPER_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$ZOOKEEPER_HOME/lib:$LD_LIBRARY_PATH
+
+## GTEST & GMOCK
+export GTEST_HOME=$HOME/tools/runtime/gtest
+export GMOCK_HOME=$HOME/tools/runtime/gmock
+export LD_LIBRARY_PATH=$GTEST_HOME/lib:$GMOCK_HOME/lib:$LD_LIBRARY_PATH
+
+
+## ZMQ
+export ZSMARTMQ_HOME=$HOME/tools/install/zmq-client4cpp
+export PATH=$ZSMARTMQ_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$ZSMARTMQ_HOME/lib:$LD_LIBRARY_PATH
+
+export ZXINOS_PATH=$PROJECT_DIR/zxinos
+export PATH=$HOME/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/lib:$LD_LIBRARY_PATH
+export BILL_LOG_PATH=$PROJECT_DIR/log
+export CCB_INSTANCE_HOME=$PROJECT_DIR/data/ruledata
+
+
+alias mdb90="mdbcsql admin/admin@pcc 10.45.7.168:8989"
+
+#QMDB ENV
+export PCC_QMDB_CONNECT_STRING='admin/admin@pcc 10.45.7.168:8989'
+export PCC_HUB_QMDB_CONNECT_STRING='admin/admin@pcc 10.45.7.168:8989'
+#oracle
+export PCC_PDB_CC_CONNECT_STRING='pcrfr90_dev/smart@pcrf90_dev'
+
+
+
+alias cmake_techlib="cmake -DCMAKE_INSTALL_PREFIX=$HOME -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=`which gcc` -DCMAKE_CXX_COMPILER=`which c++` .."
+alias cmake_servicelib="cmake -DCMAKE_INSTALL_PREFIX=$HOME -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=`which gcc` -DCMAKE_CXX_COMPILER=`which c++` .."
+alias cmake_pcrf="cmake -DCMAKE_INSTALL_PREFIX=$HOME -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=`which gcc` -DCMAKE_CXX_COMPILER=`which c++` .."
+alias cmake_phub="cmake -DCMAKE_INSTALL_PREFIX=${IMPSYSDIR} -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=`which gcc` -DCMAKE_CXX_COMPILER=`which c++` -DHTTP2=NGHTTP2 ../"
+alias cmake_pcrf_cloud="cmake -DCMAKE_INSTALL_PREFIX=$HOME -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=`which gcc` -DCMAKE_CXX_COMPILER=`which c++` -DZSmartClouder=Y  .." 
+alias cmake_phub_cloud="cmake -DCMAKE_INSTALL_PREFIX=${IMPSYSDIR} -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=`which gcc` -DCMAKE_CXX_COMPILER=`which c++` -DZSmartClouder=Y -DHTTP2=NGHTTP2 ../ "
+
+export PATH=$QuickMDB_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$QuickMDB_HOME/lib:$LD_LIBRARY_PATH
+
+
+export PATH=$HOME/PCRF/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/PCRF/lib:$LD_LIBRARY_PATH
+
+export PATH=$HOME/impsys/imp:$PATH
+export LD_LIBRARY_PATH=$HOME/impsys/imp:$LD_LIBRARY_PATH
+
+export PATH=$HOME/CloudApp/bin:$PATH
+
+export PATH=$HOME/zxinos/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/zxinos/lib:$LD_LIBRARY_PATH
+
+export ZXINOS_PATH=$HOME/zxinos
+export ZXINOS_PATH=/ztesoft/pcrf90epg/pcrf_cloud/tools/build/zxinos/zxinos
+
+export H2LOGLEVEL=4
